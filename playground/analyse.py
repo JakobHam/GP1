@@ -11,7 +11,6 @@ def model(t, delta, A, omega, phi): return np.exp(-delta *
                                                   t)*(2*A*np.cos(phi + omega*t))
 
 
-popt, pcov = curve_fit(model, df['t'], df['ay'],
-                       sigma=np.sqrt(df['ay']), absolute_sigma=True)
+popt, pcov = curve_fit(model, df['t'], df['ay'])
 
 print(popt)
